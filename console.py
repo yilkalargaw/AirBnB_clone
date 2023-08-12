@@ -10,7 +10,7 @@ class HBNBCommand(cmd.Cmd):
     Class for Interperator
     """
 
-    prompt = "(hbnb) "
+    prompt = "hbnb-> "
 
     __hbnb_class_map = {
         'BaseModel': BaseModel,
