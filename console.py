@@ -1,9 +1,10 @@
-#/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Main loop for Airbnb clone console
 """
 
 import cmd
+
 
 class HBNBCommand(cmd.Cmd):
     """
@@ -56,12 +57,12 @@ class HBNBCommand(cmd.Cmd):
            - If the class name doesn’t exist, prints ** class doesn't exist **
         """
 
-        if !(arg):
+        if not arg:
             print('** class name missing **')
         elif arg not in self.__hbnb_class_map:
             print('** class doesn\'t exist **')
         else:
-            arg=self.__hbnb_class_map(arg)
+            arg = self.__hbnb_class_map(arg)
             arg.save()
             print(arg.id)
 
