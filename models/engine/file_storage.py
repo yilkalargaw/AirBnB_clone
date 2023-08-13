@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 A class to deal with serializing and deserializing JSON data
 """
