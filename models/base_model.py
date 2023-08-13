@@ -4,7 +4,7 @@ import uuid
 
 
 class BaseModel:
-"""Base class"""
+    """Base class"""
 
     def __init__(self):
         self.id = str(uuid.uuid4())
