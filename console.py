@@ -151,7 +151,6 @@ class HBNBCommand(cmd.Cmd):
                     obj_lst.append(i.__str__())
             print(objl)
 
-
     def help_all(self):
         """
         Help for all command
