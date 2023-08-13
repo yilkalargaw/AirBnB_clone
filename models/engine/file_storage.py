@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 A class to deal with serializing and deserializing JSON data
 """
@@ -11,6 +11,7 @@ from models.place import Place
 from models.state import State
 from models.review import Review
 from models.amenity import Amenity
+
 
 class FileStorage:
     """
@@ -30,7 +31,7 @@ class FileStorage:
         """
         sets in __objects the obj with key <obj class name>.id
         """
-        joined_obj_symbol  = ''.join([obj.__class__.__name__ , "." , obj.id])
+        joined_obj_symbol = ''.join([obj.__class__.__name__, ".", obj.id])
         FileStorage.__objects[joined_obj_symbol] = obj
 
     def save(self):

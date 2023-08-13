@@ -7,6 +7,7 @@ from models.city import City
 from models.base_model import BaseModel
 import os
 
+
 class TestCity(unittest.TestCase):
 
     def test_instant(self):
