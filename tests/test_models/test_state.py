@@ -7,6 +7,7 @@ from models.state import State
 from models.base_model import BaseModel
 import os
 
+
 class TestState(unittest.TestCase):
 
     def test_instant(self):

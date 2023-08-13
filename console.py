@@ -14,6 +14,7 @@ from models.review import Review
 from models.amenity import Amenity
 from models import storage
 
+
 class HBNBCommand(cmd.Cmd):
     """
     Class for Interperator
@@ -107,7 +108,6 @@ class HBNBCommand(cmd.Cmd):
         """
         print('Prints the string representation of an instance.')
 
-
     def do_destroy(self, arg):
         """
         Deletes an instance based on the class name and
@@ -153,8 +153,9 @@ class HBNBCommand(cmd.Cmd):
         elif len(args) == 2:
             obj_lst = []
             for i in storage.all().values():
-                if len(parsed_args) > 0 and parsed_args[0] == i.__class__.__name__:
-                    obj_lst.append(i.__str__())
+                if len(parsed_args) > 0:
+                    if parsed_args[0] == i.__class__.__name__:
+                        obj_lst.append(i.__str__())
                 elif len(parsed_args) == 0:
                     obj_lst.append(i.__str__())
             print(objl)
