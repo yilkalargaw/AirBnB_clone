@@ -45,3 +45,16 @@ class FileStorage:
 
         with open(FileStorage.__file_path, "w") as to_file:
             json.dump(tmp_dict, to_file)
+
+    def reload(self):
+        """ deserializes the JSON file to __objects """
+        if not os.path.isfile(FileStorage.__file_path):
+            return
+
+        with open(FileStorage.__file_path, "r", encoding="utf-8") as file:
+             obj_dict = json.load(file)
+                for key, value in obj_dict.items():
+                    class_name, obj_id = key.split('.')
+                    cls = eval(class_name)
+                    obj = cls(**value)
+                    self.__objects[key] = obj
