@@ -12,7 +12,7 @@ class TestCity(unittest.TestCase):
     def test_instant(self):
         """Tests instantiation of City class."""
 
-        b = City()
-        self.assertEqual(str(type(b)), "<class 'models.city.City'>")
-        self.assertIsInstance(b, City)
-        self.assertTrue(issubclass(type(b), BaseModel))
+        city = City()
+        self.assertEqual(str(type(city)), "<class 'models.city.City'>")
+        self.assertIsInstance(city, City)
+        self.assertTrue(issubclass(type(city), BaseModel))

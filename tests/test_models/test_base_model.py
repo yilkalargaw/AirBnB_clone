@@ -20,4 +20,4 @@ class TestBaseModel(unittest.TestCase):
     def test_id(self):
         """Tests if id is string."""
         tmp = TestBaseModel.BaseModel()
-        self.assertEqual(str, type(tmp.id))
+       self.assertEqual(str, type(tmp.id))
