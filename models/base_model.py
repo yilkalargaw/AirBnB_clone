@@ -1,10 +1,13 @@
-from datetime import datetime
+#!/usr/bin/python3
+"""Module for Base class"""
+
+
 import uuid
-"""Module for Base class""" 
+from datetime import datetime
 
 
 class BaseModel:
-    """Base class"""
+    """Base class that will be inherited later"""
 
     def __init__(self):
         self.id = str(uuid.uuid4())
