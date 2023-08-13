@@ -36,7 +36,7 @@ class HBNBCommand(cmd.Cmd):
         """
         Help for quit
         """
-        print("Quit command to exit the program")
+        print('Quit command to exit the program')
 
     def do_EOF(self, arg):
         """
@@ -48,7 +48,7 @@ class HBNBCommand(cmd.Cmd):
         """
         Help for EOF
         """
-        print("End of File")
+        print('End of File')
 
     def do_create(self, arg):
         """ Creates a new instance of BaseModel, saves it (to the JSON file)
