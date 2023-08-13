@@ -3,16 +3,16 @@
 
 
 import unittest
-from models.state import State
+from models.place import Place
 from models.base_model import BaseModel
 import os
 
 class TestState(unittest.TestCase):
 
     def test_instant(self):
-        """Tests instantiation of state class."""
+        """Tests instantiation of Place class."""
 
-        state = State()
-        self.assertEqual(str(type(state)), "<class 'models.state.State'>")
-        self.assertIsInstance(state, State)
-        self.assertTrue(issubclass(type(State), BaseModel))
+        place = Place()
+        self.assertEqual(str(type(Place)), "<class 'models.place.Place'>")
+        self.assertIsInstance(place, Place)
+        self.assertTrue(issubclass(type(Place), BaseModel))
