@@ -95,11 +95,41 @@ class HBNBCommand(cmd.Cmd):
 
     def help_show(self):
         """
-        Prints the string representation of an instance
-        based on the class name and id. Ex: $ show BaseModel
+        Help for show command
         """
         print('Prints the string representation of an instance.')
 
+
+    def do_destroy(self, arg):
+        """
+        Deletes an instance based on the class name and
+        id (save the change into the JSON file).
+        Ex: $ destroy BaseModel 1234-1234-1234
+        """
+
+        if not arg:
+            print('** class name missing **')
+        else:
+            parsed_args = arg.split()
+
+        if parsed_args[0] not in self.__class_map:
+            print('** class doesn\'t exist **')
+        elif len(parsed_args) == 1:
+            print('** instance id missing **')
+        else:
+            joined_obj_symbol = ''.join([parsed_args[0], '.', parsed_args[1]])
+            try:
+                del (dicts[joined_obj_symbol])
+                storage.save()
+            except KeyError:
+                print('** no instance found **')
+
+    def help_destroy(self):
+        """
+        Help for destroy command
+        """
+        print('Deletes an instance based on the class name and
+        id"
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
