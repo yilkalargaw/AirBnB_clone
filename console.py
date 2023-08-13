@@ -35,6 +35,29 @@ class HBNBCommand(cmd.Cmd):
 
     error_occured = False
 
+    def precmd(self, arg):
+        """
+        method to be executed before command line execution
+        """
+        parsed_args = arg.split('.')
+
+        if parsed_args[0] in self.__lists:
+
+            further_parsed_args = parsed_args[1].split("(")
+            ids = further_parsed_args[1].split(")").strip("\"'")
+
+            if further_parsed_args[0] in self.__methods_ac:
+                return(''.join(further_parsed_args[0],
+                               ' ',
+                               parsed_args[0]))
+
+            elif further_parsed_args[0] in self.__methods_sd:
+                return(''.join(further_parsed_args[0],
+                               ' ',
+                               parsed_args[0],
+                               ' ',
+                               ids))
+
     def do_quit(self, arg):
         """
         Quits the command Loop.
