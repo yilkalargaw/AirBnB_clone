@@ -10,7 +10,7 @@ class BaseModel:
     """Base class that will be inherited later"""
 
     def __init__(self, *args, **kwargs):
-        if kwargs not None:
+        if kwargs:
             for key, value in kwargs.items():
                 if key != '__class__':
                     setattr(self, key, value)
