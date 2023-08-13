@@ -3,16 +3,16 @@
 
 
 import unittest
-from models.state import State
+from models.amenity import Amenity
 from models.base_model import BaseModel
 import os
 
 class TestState(unittest.TestCase):
 
     def test_instant(self):
-        """Tests instantiation of state class."""
+        """Tests instantiation of Amenity class."""
 
-        state = State()
-        self.assertEqual(str(type(state)), "<class 'models.state.State'>")
-        self.assertIsInstance(state, State)
-        self.assertTrue(issubclass(type(State), BaseModel))
+        amenity = Amenity()
+        self.assertEqual(str(type(amenity)), "<class 'models.amenity.Amenity'>")
+        self.assertIsInstance(amenity, Amenity)
+        self.assertTrue(issubclass(type(Amenity), BaseModel))
