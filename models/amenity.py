@@ -1,0 +1,9 @@
+#!/usr/bin/python3
+"""Module for State class."""
+
+from models.base_model import BaseModel
+
+
+class Amenity(BaseModel):
+    """Class representing a State. and inherits from basemodel"""
+    name = ""
