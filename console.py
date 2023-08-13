@@ -11,7 +11,7 @@ class HBNBCommand(cmd.Cmd):
     Class for Interperator
     """
 
-    prompt = "hbnb-> "
+    prompt = "(hbnb)"
 
     __hbnb_class_map = {
         'BaseModel': BaseModel,
@@ -128,8 +128,36 @@ class HBNBCommand(cmd.Cmd):
         """
         Help for destroy command
         """
-        print('Deletes an instance based on the class name and
-        id"
+        print('Deletes an instance based on the class name and id')
+
+    def do_all(self, arg):
+        """
+        Prints all string representation of all instances based or not
+        on the class name.
+        """
+        if not arg:
+            print('** class name missing **')
+        else:
+            parsed_args = arg.split()
+
+        if parsed_args[0] not in self.__class_map:
+            print('** class doesn\'t exist **')
+        elif len(args) == 2:
+            obj_lst = []
+            for i in storage.all().values():
+                if len(parsed_args) > 0 and parsed_args[0] == i.__class__.__name__:
+                    obj_lst.append(i.__str__())
+                elif len(parsed_args) == 0:
+                    obj_lst.append(i.__str__())
+            print(objl)
+
+
+    def help_all(self):
+        """
+        Help for all command
+        """
+        print('Prints all string representation of all instances')
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
