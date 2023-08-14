@@ -50,15 +50,15 @@ class HBNBCommand(cmd.Cmd):
 
             if further_parsed_args[0] in self.__methods_ac:
                 arg = ''.join(further_parsed_args[0],
-                               ' ',
-                               parsed_args[0])
+                              ' ',
+                              parsed_args[0])
 
             elif further_parsed_args[1] in self.__methods_sd:
                 arg = ''.join(further_parsed_args[0],
-                               ' ',
-                               parsed_args[0],
-                               ' ',
-                               ids)
+                              ' ',
+                              parsed_args[0],
+                              ' ',
+                              ids)
         return arg
 
     def do_quit(self, arg):

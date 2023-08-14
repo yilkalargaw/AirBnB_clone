@@ -5,6 +5,7 @@
 import uuid
 from datetime import datetime
 
+
 class BaseModel:
     """Base class that will be inherited later"""
 
@@ -34,7 +35,6 @@ class BaseModel:
         self.updated_at = datetime.now()
         from models import storage
         storage.save()
-
 
     def to_dict(self):
         """Returns a dictionary representation of an instance."""
