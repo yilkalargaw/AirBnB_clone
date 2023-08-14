@@ -48,12 +48,12 @@ class HBNBCommand(cmd.Cmd):
             further_parsed_args2 = further_parsed_args[1].split(')')
             ids = further_parsed_args2[0].strip('"\'')
 
-            if further_parsed_args[0] in self.__methods_ac:
+            if further_parsed_args[0] in ['all', 'count']:
                 arg = ''.join(further_parsed_args[0],
                               ' ',
                               parsed_args[0])
 
-            elif further_parsed_args[1] in self.__methods_sd:
+            elif further_parsed_args[1] in self.['show', 'destroy']:
                 arg = ''.join(further_parsed_args[0],
                               ' ',
                               parsed_args[0],
