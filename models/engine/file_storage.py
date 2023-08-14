@@ -23,20 +23,20 @@ class FileStorage:
 
     def all(self):
         """
-        returns the dictionary __objects
+        Returns the dictionary __objects
         """
         return FileStorage.__objects
 
     def new(self, obj):
         """
-        sets in __objects the obj with key <obj class name>.id
+        Sets in __objects the obj with key <obj class name>.id
         """
         joined_obj_symbol = ''.join([obj.__class__.__name__, ".", obj.id])
         FileStorage.__objects[joined_obj_symbol] = obj
 
     def save(self):
         """
-        serializes __objects to the JSON file (path: __file_path)
+        Serializes __objects to the JSON file (path: __file_path)
         """
         tmp_dict = {}
 
@@ -47,7 +47,9 @@ class FileStorage:
             json.dump(tmp_dict, to_file)
 
     def reload(self):
-        """ deserializes the JSON file to __objects """
+        """
+        Deserializes the JSON file to __objects from file.
+        """
         if not os.path.isfile(FileStorage.__file_path):
             return
 

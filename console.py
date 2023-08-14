@@ -38,7 +38,7 @@ class HBNBCommand(cmd.Cmd):
 
     def precmd(self, arg):
         """
-        method to be executed before command line execution
+        Method to be executed before command line execution.
         """
         parsed_args = arg.split('.')
 
@@ -69,31 +69,31 @@ class HBNBCommand(cmd.Cmd):
 
     def help_quit(self):
         """
-        Help for quit
+        Help for quit.
         """
         print('Quit command to exit the program')
 
     def do_EOF(self, arg):
         """
-        End-of-file
+        End-of-file indicator. Just Return true.
         """
         return True
 
     def help_EOF(self):
         """
-        Help for EOF
+        Help for EOF.
         """
         print('End of File')
 
     def emptyline(self):
         """
-        do nothing
+        Do nothing just an emptyline.
         """
         pass
 
     def help_emptyline(self):
         """
-        help for empty line
+        Help for empty line.
         """
         print('Do Nothing (emptyline)')
 
@@ -115,7 +115,7 @@ class HBNBCommand(cmd.Cmd):
 
     def help_create(self):
         """
-        Help for create
+        Help for create.
         """
         print('Creates an instance of a Base Model, saves it to  a JSON file')
 
@@ -200,7 +200,7 @@ class HBNBCommand(cmd.Cmd):
 
     def help_all(self):
         """
-        Help for all command
+        Help for all command.
         """
         print('Prints all string representation of all instances')
 
