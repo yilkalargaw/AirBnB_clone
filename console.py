@@ -129,7 +129,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             parsed_args = arg.split()
 
-        if parsed_args[0] not in self.__class_map:
+        if parsed_args[0] not in self.__hbnb_class_map:
             print('** class doesn\'t exist **')
         elif len(parsed_args) == 1:
             print('** instance id missing **')
@@ -158,7 +158,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             parsed_args = arg.split()
 
-        if parsed_args[0] not in self.__class_map:
+        if parsed_args[0] not in self.__hbnb_class_map:
             print('** class doesn\'t exist **')
         elif len(parsed_args) == 1:
             print('** instance id missing **')
@@ -186,7 +186,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             parsed_args = arg.split()
 
-        if parsed_args[0] not in self.__class_map:
+        if parsed_args[0] not in self.__hbnb_class_map:
             print('** class doesn\'t exist **')
         elif len(args) == 2:
             obj_lst = []
