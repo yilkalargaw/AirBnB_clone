@@ -52,9 +52,9 @@ class FileStorage:
             return
 
         with open(FileStorage.__file_path, "r", encoding="utf-8") as file:
-             obj_dict = json.load(file)
-                for key, value in obj_dict.items():
-                    class_name, obj_id = key.split('.')
-                    cls = eval(class_name)
-                    obj = cls(**value)
-                    self.__objects[key] = obj
+            obj_dict = json.load(file)
+            for key, value in obj_dict.items():
+                class_name, obj_id = key.split('.')
+                cls = eval(class_name)
+                obj = cls(**value)
+                self.__objects[ke] = obj
