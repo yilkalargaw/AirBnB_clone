@@ -49,16 +49,16 @@ class HBNBCommand(cmd.Cmd):
             ids = further_parsed_args2[0].strip('"\'')
 
             if further_parsed_args[0] in ['all', 'count']:
-                arg = ''.join(further_parsed_args[0],
+                arg = ''.join([further_parsed_args[0],
                               ' ',
-                              parsed_args[0])
+                               parsed_args[0]])
 
             elif further_parsed_args[1] in ['show', 'destroy']:
-                arg = ''.join(further_parsed_args[0],
+                arg = ''.join([further_parsed_args[0],
                               ' ',
                               parsed_args[0],
                               ' ',
-                              ids)
+                               ids])
         return arg
 
     def do_quit(self, arg):
