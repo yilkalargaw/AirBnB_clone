@@ -57,4 +57,4 @@ class FileStorage:
                 class_name, obj_id = key.split('.')
                 cls = eval(class_name)
                 obj = cls(**value)
-                self.__objects[ke] = obj
+                self.__objects[key] = obj
