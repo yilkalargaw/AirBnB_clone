@@ -5,6 +5,7 @@ Main loop for Airbnb clone console
 
 import cmd
 import json
+import os
 from models.base_model import BaseModel
 from models.user import User
 from models.city import City
@@ -20,7 +21,7 @@ class HBNBCommand(cmd.Cmd):
     Class for Interperator
     """
 
-    prompt = "(hbnb)"
+    prompt = '(hbnb) '
 
     __hbnb_class_map = {
         'BaseModel': BaseModel,
@@ -41,22 +42,24 @@ class HBNBCommand(cmd.Cmd):
         """
         parsed_args = arg.split('.')
 
-        if parsed_args[0] in self.__lists:
+        if parsed_args[0] in self.__hbnb_class_map:
 
             further_parsed_args = parsed_args[1].split("(")
-            ids = further_parsed_args[1].split(")").strip("\"'")
+            further_parsed_args2 = further_parsed_args[1].split(')')
+            ids = further_parsed_args2[0].strip('"\'')
 
             if further_parsed_args[0] in self.__methods_ac:
-                return(''.join(further_parsed_args[0],
+                arg = ''.join(further_parsed_args[0],
                                ' ',
-                               parsed_args[0]))
+                               parsed_args[0])
 
-            elif further_parsed_args[0] in self.__methods_sd:
-                return(''.join(further_parsed_args[0],
+            elif further_parsed_args[1] in self.__methods_sd:
+                arg = ''.join(further_parsed_args[0],
                                ' ',
                                parsed_args[0],
                                ' ',
-                               ids))
+                               ids)
+        return arg
 
     def do_quit(self, arg):
         """
@@ -81,6 +84,18 @@ class HBNBCommand(cmd.Cmd):
         Help for EOF
         """
         print('End of File')
+
+    def emptyline(self):
+        """
+        do nothing
+        """
+        pass
+
+    def help_emptyline(self):
+        """
+        help for empty line
+        """
+        print('Do Nothing (emptyline)')
 
     def do_create(self, arg):
         """ Creates a new instance of BaseModel, saves it (to the JSON file)
