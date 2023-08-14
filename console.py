@@ -109,7 +109,7 @@ class HBNBCommand(cmd.Cmd):
         elif arg not in self.__hbnb_class_map:
             print('** class doesn\'t exist **')
         else:
-            arg = self.__hbnb_class_map(arg)
+            arg = self.__hbnb_class_map[arg]()
             arg.save()
             print(arg.id)
 
@@ -136,7 +136,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             joined_obj_symbol = ''.join([parsed_args[0], '.', parsed_args[1]])
             try:
-                print(dicts[joined_obj_symbol])
+                print(storage.all()[joined_obj_symbol])
             except KeyError:
                 print('** no instance found **')
 
@@ -165,7 +165,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             joined_obj_symbol = ''.join([parsed_args[0], '.', parsed_args[1]])
             try:
-                del (dicts[joined_obj_symbol])
+                del (storage.all()[joined_obj_symbol])
                 storage.save()
             except KeyError:
                 print('** no instance found **')
@@ -188,7 +188,7 @@ class HBNBCommand(cmd.Cmd):
 
         if parsed_args[0] not in self.__hbnb_class_map:
             print('** class doesn\'t exist **')
-        elif len(args) == 2:
+        elif len(parsed_args) == 2:
             obj_lst = []
             for i in storage.all().values():
                 if len(parsed_args) > 0:
