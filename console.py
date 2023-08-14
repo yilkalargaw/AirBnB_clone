@@ -53,7 +53,7 @@ class HBNBCommand(cmd.Cmd):
                               ' ',
                               parsed_args[0])
 
-            elif further_parsed_args[1] in self.['show', 'destroy']:
+            elif further_parsed_args[1] in ['show', 'destroy']:
                 arg = ''.join(further_parsed_args[0],
                               ' ',
                               parsed_args[0],
